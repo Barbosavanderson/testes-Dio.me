@@ -1,0 +1,12 @@
+let heroi = "Gadernal";
+let Xp = 10001
+let nivel
+
+if(Xp < 2000){ nivel = "Bronze" }
+else if(Xp >= 2001 && Xp <= 5000) {nivel = "Prata"}
+else if(Xp >= 5001 && Xp <= 5999) {nivel = "ouro"}
+else if(Xp >= 6000 && Xp <= 7000) {nivel = "platina"}
+else if(Xp >= 7001 && Xp <= 8000) {nivel = "Ascendente"}
+else if(Xp >= 8000 && Xp <= 10000){nivel = " O brabão"}
+else if (Xp > 10000) {nivel = "Chapolin"}
+console.log(heroi + " , seu nível é " + nivel )
