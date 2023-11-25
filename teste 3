@@ -1,0 +1,10 @@
+// essa foi a primeira forma que imaginei o retorno desejado.
+let heroi = "Tito Hernandes "
+let tipo = "mago"
+
+
+
+if(tipo == "mago"){console.log(`o ${heroi}usou sim salabim.`)}
+else if (tipo == "guerreiro") {console.log(`o ${heroi} usou bicuda.`)}
+else if (tipo == "ninja") {console.log(`o ${heroi} rasengam no jutso.`)  
+}    
