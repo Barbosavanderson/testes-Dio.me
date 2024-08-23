@@ -25,7 +25,7 @@ function Ranking(vitoria) {
   } else if (vitoria > 99) {
     nivel = "God"
   }
-![personas.png]
+![personas.png](/personas.png)
 
   return nivel;
 }
