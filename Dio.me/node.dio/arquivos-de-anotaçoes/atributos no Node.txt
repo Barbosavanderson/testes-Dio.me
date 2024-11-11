@@ -1,0 +1,34 @@
+obejto: entramos com const abrimos = { e passamos os parametros desejados}
+const cidade={ NOME: "belo horizonte", COR:"VERDE", NUMERO: 1}
+
+Esse é um tipo de função asincrona, ela espera algo acontecer. 
+async function rollDice(){
+return Math.floor(Math.random() *6) + 1;
+}
+
+AWAIT quando  usamos await é para esperar que outra função espere.
+no caso demostrado é chamada a função, console.log e depois que essa acontece
+vem a proxima de playRaceengine.(Encadeamento de funções)
+(async function main() {
+    console.log( `🏁  Corrida entre ${Player1.NOME} e ${Player2.NOME} começando ...\n`);    
+
+   await playRaceengine(Player1, Player2);
+
+})();
+
+
+COisas novas aprendidas
+ ( shift+Alt seta, duplica a linha)
+
+colcar cor para aparcer no console
+Js
+console.log("\x1b[31m%s\x1b[0m", "Este texto será vermelho");
+console.log("\x1b[32m%s\x1b[0m", "Este texto será verde");
+console.log("\x1b[33m%s\x1b[0m", "Este texto será amarelo");
+console.log("\x1b[34m%s\x1b[0m", "Este texto será azul");
+
+Python
+console.log("\x1b[31m%s\x1b[0m", "Este texto será vermelho");
+console.log("\x1b[32m%s\x1b[0m", "Este texto será verde");
+console.log("\x1b[33m%s\x1b[0m", "Este texto será amarelo");
+console.log("\x1b[34m%s\x1b[0m", "Este texto será azul");
