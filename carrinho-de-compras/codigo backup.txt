@@ -1,0 +1,106 @@
+Codigo pronto para aula Remove item 
+próxima aula display cart
+index
+ import * as cartService from "./service/cart.js"
+import creatItem from "./service/item.js";
+
+const myCart = [];
+const myWhischList = [];
+
+console.log("\e[31m----------*********--------*********-----\e[0m");
+console.log(" Carrinho de compras.");
+
+const item1 = await creatItem("cadeira", 101. , 1);
+const item2 = await creatItem("faca", 10.3 , 1);
+
+
+//adicionda dois itens  ao carrinho.
+ await cartService.addItem(myCart, item1);
+ await cartService.addItem(myCart, item2);
+
+ await cartService.removeItem(myCart, 0);
+
+ await cartService.displayCart(myCart);
+
+ //deletado dois itens do carrinho.
+// await cartService.deleteItem(myCart, item2.name);
+// await cartService.deleteItem(myCart, item1.name,);
+
+
+ await cartService.calcularTotal(myCart);
+
+
+
+
+**************************************************************************
+
+item
+// cria item com subtotal correto
+async function creatItem(name, price, quantity) {
+    
+    return {
+name,
+price,
+quantity,
+subTotal: () => (price * quantity).toFixed(2),// esse .toFixed(2) arredonda para que não fique numeros gigaste.
+    
+}
+};
+
+export default creatItem;
+
+
+
+*********************************************************************
+
+cart
+/// açoes do carrinho
+
+
+//adicionar itens carrinho
+async function addItem(userCart, item) {
+   userCart.push(item);
+}
+//calcular total
+async function calcularTotal(userCart) {
+   console.log(" \n Você me deve:");
+   const result = userCart.reduce((total, item) => total + parseFloat(item.subTotal()), 0); 
+   console.log(result.toFixed(2)); // Arredonda o resultado final para 2 casas decimais
+   return result.toFixed(2);
+ }
+// remover um item do carrinho
+async function removeItem(userCart, index ) {
+   // Aquilo que é visto é o correto. não começa em zero a contagem de itens.
+   const deleteIndex = index - 1;
+
+   // verificand o se é maior que zero e menor que o limiti o carrinho
+   if(index >= 0 && index < userCart.length) {
+      userCart.splice(deleteIndex, 1);
+   }
+   
+}
+
+// excluir item do carrinho
+async function deleteItem(userCart, name) {
+   const index = userCart.findIndex((item)=> item.name === name);
+if(index !== -1){
+  userCart.splice(index, 1);
+}
+}
+
+async function displayCart(userCart) {
+   console.log("\n Lista de compras do carrinho:")
+   userCart.forEach((item, index) => {
+console.log(`${index + 1}.${item.name} - R$ ${item.price}| ${item.quantity} x| Subtotal = ${item.subTotal()}`)
+      
+   });
+}
+
+
+export {
+   addItem,
+   calcularTotal,
+   deleteItem,
+   removeItem,
+   displayCart
+}
